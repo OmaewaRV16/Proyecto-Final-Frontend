@@ -90,16 +90,6 @@
             </div> -->
         </div>
 
-        <div id="modalVideo" class="modal">
-            <span class="cerrar">&times;</span>
-                <div class="modal-contenido">
-                    <video id="videoPlayer" controls autoplay>
-                    <source src="videos/video-xtepen-bg-loop.mp4" type="video/mp4">
-                    Tu navegador no soporta el video.
-                    </video>
-                </div>
-        </div>
-
     </section>
 
     <script>
@@ -111,8 +101,30 @@
         nextText: "<i class='fa fa-chevron-right fa-2x'></i>"
         });
     });
+    </script>
 
+    <hr>
 
+    <section class="contenedor-elegirnos ancho wow animate__animated animate__zoomInUp animate__slow" id="elegir">
+        <h2>¿Por qué elegirnos?</h2>
+        <p>Porque entendemos que cada celebración es única. En nuestra hacienda no solo encuentras un lugar, encuentras un equipo que escucha, que cuida los detalles y que se compromete contigo desde el primer momento. Aquí no solo se hacen eventos, se viven experiencias llenas de emoción, belleza y tranquilidad. Queremos que disfrutes, que sonrías y que recuerdes ese día como uno de los mejores de tu vida.</p>
+        <div class="filtro-texto wow animate__animated animate__fadeInRight animate__slow">
+            <div class="video-thumbnail" id="abrirModalVideo">
+                    <img class="imagen-video" src="imagenes/imagen-modal.jpeg" alt="">
+                    <span class="play-icon">&#9658;</span>
+            </div>
+            <div id="modalVideo" class="modal">
+                <span class="cerrar">&times;</span>
+                    <div class="modal-contenido">
+                        <video id="videoPlayer" controls autoplay>
+                        <source src="videos/video-xtepen-bg-loop.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                        </video>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
         const abrirModal = document.getElementById("abrirModalVideo");
         const modal = document.getElementById("modalVideo");
@@ -138,19 +150,6 @@
         });
     });
     </script>
-
-    <hr>
-
-    <section class="contenedor-elegirnos ancho wow animate__animated animate__zoomInUp animate__slow" id="elegir">
-        <h2>¿Por qué elegirnos?</h2>
-        <p>Porque entendemos que cada celebración es única. En nuestra hacienda no solo encuentras un lugar, encuentras un equipo que escucha, que cuida los detalles y que se compromete contigo desde el primer momento. Aquí no solo se hacen eventos, se viven experiencias llenas de emoción, belleza y tranquilidad. Queremos que disfrutes, que sonrías y que recuerdes ese día como uno de los mejores de tu vida.</p>
-                    <div class="filtro-texto wow animate__animated animate__fadeInRight animate__slow">
-                <div class="video-thumbnail" id="abrirModalVideo">
-                    <img class="imagen-video" src="imagenes/imagen-modal.jpeg" alt="">
-                    <span class="play-icon">&#9658;</span>
-                </div>
-            </div>
-    </section>
 
     <section class="foto-parallaxs">
         <div class="info-parallaxs">
