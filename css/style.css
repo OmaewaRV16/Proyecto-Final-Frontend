@@ -34,7 +34,6 @@ html {
     bottom: 40px;
     right: 20px;
     padding: 17px;
-    border: 1px var(--Negro) solid;
     background-color: var(--Rojo);
     color: #fff;
     font-size: 30px;
@@ -42,7 +41,16 @@ html {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 50%;
 }
+
+.flecha:hover {
+    transform: translateY(-5px) scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
 
 .ancho {
     max-width: 1200px;
@@ -109,15 +117,34 @@ nav {
 }
 
 .nav-links a {
+    position: relative;
     color: var(--Negro);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease, transform 0.4s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--Rojo);
+    transition: all 0.4s ease;
 }
 
 .nav-links a:hover {
     color: var(--Rojo);
+    transform: scale(1);
 }
+
+.nav-links a:hover::after {
+    left: 0;
+    width: 100%;
+}
+
 
 #menu-toggle {
     display: none;
@@ -283,11 +310,14 @@ nav {
     padding: 10px;
     cursor: pointer;
     font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .rslides_nav:hover {
     color: var(--Rojo);
+    transform: translateY(-50%) scale(1.2);
 }
+
 
 .rslides_nav.prev {
     left: 10px;
@@ -391,6 +421,15 @@ hr {
     padding-bottom: 8px;
 }
 
+.info-parallaxs img {
+    transition: all 0.4s ease;
+}
+
+.info-parallaxs img:hover {
+    transform: scale(1.1);
+    filter: grayscale(1);
+}
+
 .texto-parallaxs {
     flex-direction: column;
 }
@@ -422,7 +461,6 @@ hr {
     line-height: 50px;
     margin-bottom: 30px;
 }
-
 .acordeon-titulo {
     display: flex;
     justify-content: space-between;
@@ -435,10 +473,21 @@ hr {
     color: var(--Negro);
 }
 
-.fa-arrow-down {
+.titulo-con-icono {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flecha-icono {
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), color 0.3s;
 }
-.fa-arrow-down:hover {
+
+.flecha-icono.activa {
+    transform: rotate(180deg);
+}
+
+.flecha-icono:hover {
     transform: translateY(10px) scale(1.2) rotate(15deg);
     color: var(--Rojo);
 }
@@ -462,11 +511,13 @@ hr {
 .contenido-talcual p {
     padding: 50px;
 }
+
 .contenido-talcual img {
     max-width: 30%;
     height: auto;
     border-radius: 10px;
 }
+
 
 .eventos {
     padding: 30px;
@@ -559,12 +610,32 @@ hr {
     text-align: center;
 }
 
+.blog figure {
+    height: 50%;
+}
+
+.blog img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 52%, 80% 65%, 25% 100%, 17% 100%, 0 100%, 0% 85%);
+}
+
 .blog h2 {
     font-family: var(--LetraPrincipal);
     font-weight: lighter;
     font-size: 2.5em;
     line-height: 50px;
     margin-bottom: 30px;
+}
+
+.blog h3 {
+    padding:5px;
+}
+
+.blog p {
+    padding: 5px;
+    font-size: 15px;
 }
 
 .blog-contenedor {
@@ -576,21 +647,23 @@ hr {
 }
 
 .blog-contenedor article {
-    padding: 20px;
-    flex: 1 1 300px;
+    flex: 0 -1 300px;
     max-width: 350px;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    height: 400px;
     overflow: hidden;
     margin: 0.5rem;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s;
 }
+
 .blog-contenedor article:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    border-bottom: 5px var(--Rojo) solid;
 }
 
 .blog-contenedor a {
@@ -603,19 +676,22 @@ hr {
     border-radius: 5px;
     display: inline-block;
     margin-top: 15px;
-    transition: background 0.3s, color 0.3s;
-    border: none;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    width: 50%;
-    align-items: center;
+    width: 40%;
     text-align: center;
-    margin-left: 25%;
+    margin: auto;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 0 var(--Rojo);
 }
 
 .blog-contenedor a:hover {
     background-color: var(--Rojo);
     color: var(--Beige);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
 }
+
 
 .contacto {
     padding: 50px;
