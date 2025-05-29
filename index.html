@@ -18,7 +18,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="#inicio"><i class="flecha fa-solid fa-angle-up"></i></a>
+    <a href="#inicio"><i class="flecha fa-solid fa-angle-up cssanimation hu__hu__"></i></a>
     <header id="inicio">
         <div class="header-contenedor ancho">
             <div class="header-iconos">
@@ -82,12 +82,12 @@
             <figure>
                 <img class="wow animate__animated animate__fadeInLeft animate__slow" src="imagenes/xtepen-logo-500-shadow.png" alt="">
             </figure>
-            <div class="filtro-texto wow animate__animated animate__fadeInRight animate__slow">
+            <!-- <div class="filtro-texto wow animate__animated animate__fadeInRight animate__slow">
                 <div class="video-thumbnail" id="abrirModalVideo">
-                    <img class="wow animate_animated" src="imagenes/imagen-modal.jpeg" alt="">
+                    <img class="imagen-video" src="imagenes/imagen-modal.jpeg" alt="">
                     <span class="play-icon">&#9658;</span>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div id="modalVideo" class="modal">
@@ -144,6 +144,12 @@
     <section class="contenedor-elegirnos ancho wow animate__animated animate__zoomInUp animate__slow" id="elegir">
         <h2>¿Por qué elegirnos?</h2>
         <p>Porque entendemos que cada celebración es única. En nuestra hacienda no solo encuentras un lugar, encuentras un equipo que escucha, que cuida los detalles y que se compromete contigo desde el primer momento. Aquí no solo se hacen eventos, se viven experiencias llenas de emoción, belleza y tranquilidad. Queremos que disfrutes, que sonrías y que recuerdes ese día como uno de los mejores de tu vida.</p>
+                    <div class="filtro-texto wow animate__animated animate__fadeInRight animate__slow">
+                <div class="video-thumbnail" id="abrirModalVideo">
+                    <img class="imagen-video" src="imagenes/imagen-modal.jpeg" alt="">
+                    <span class="play-icon">&#9658;</span>
+                </div>
+            </div>
     </section>
 
     <section class="foto-parallaxs">
@@ -388,8 +394,24 @@
                     <br>
                     <button type="submit">Enviar</button>
                 </form>
+            </div>
 
-    <script>
+            <div class="contacto-info">
+                <div class="info">
+                    <h3>Información de contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Hacienda Xtepén, Mérida, Yucatán</p>
+                    <p><i class="fas fa-phone"></i> +52 999 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> contacto@xtepen.com</p>
+                    <p>Síguenos en redes sociales:</p>
+                    <p>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+            <script>
         document.getElementById('formulario').addEventListener('submit', function(event) {
             event.preventDefault();
 
@@ -423,24 +445,6 @@
         this.submit();
         });
     </script>
-
-
-            </div>
-
-            <div class="contacto-info wow animate__animated animate__rollIn animate__slow">
-                <div class="info">
-                    <h3>Información de contacto</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Hacienda Xtepén, Mérida, Yucatán</p>
-                    <p><i class="fas fa-phone"></i> +52 999 123 4567</p>
-                    <p><i class="fas fa-envelope"></i> contacto@xtepen.com</p>
-                    <p>Síguenos en redes sociales:</p>
-                    <p>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </p>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="mapa" id="mapa">

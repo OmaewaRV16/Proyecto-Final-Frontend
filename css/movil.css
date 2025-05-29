@@ -3,6 +3,11 @@
         font-size: 30px;
     }
 
+    .header-iconos i{
+    color: var(--Beige);
+    font-size: 2em;
+    }
+
     .nav-contenedor {
         position: relative;
     }
@@ -74,9 +79,12 @@
     }
 
     .filtro img {
-        width: 60%;
+        width: 80%;
     }
 
+    .filtro-texto img {
+        width: 100%;
+    }
     .filtro button {
         margin-left: 120px;
         margin-right: 120px;
@@ -126,7 +134,8 @@
     }
 
     .cerrar {
-        top: 300px;
+        top: 230px;
+        font-size: 4em;
     }
 
     .seccion-galeria {
