@@ -1,0 +1,170 @@
+@media screen and (max-width: 480px) {
+    .flecha {
+        font-size: 3    0px;
+    }
+
+    .nav-contenedor {
+        position: relative;
+    }
+
+    .nav-links a {
+        font-size: 1em;
+        padding: 5px;
+        border-bottom: 2px var(--Rojo) solid;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--Blanco);
+        padding: 30px 20px;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .close-menu {
+    font-size: 2em;
+    color: var(--Rojo);
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 5px;
+    }
+
+
+    #menu-toggle {
+        font-size: 2.5em;
+        cursor: pointer;
+        user-select: none;
+        z-index: 1100;
+        display: flex;
+    }
+
+
+    .rslides img {
+        height: 600px;
+    }
+
+    .filtro {
+        flex-direction: column-reverse;
+    }
+
+    .filtro h1 {
+        font-size: 15px;
+        line-height: 30px;
+        text-align: justify;
+        padding: 50px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .filtro img {
+        width: 60%;
+    }
+
+    .filtro button {
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    .contenido-talcual {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contenido-talcual img {
+        max-width: 70%;
+    }
+
+    .info-parallaxs {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .info-parallaxs h2 {
+        font-size: 3em;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .info-parallaxs p {
+        display: none;
+    }
+
+    .info-parallaxs h3 {
+        display: none;
+    }
+
+    .info-parallaxs img {
+        max-width: 70%;
+        height: auto;
+        filter: none;
+    }
+
+    .slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+        max-width: 100%;
+        scroll-snap-align: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .seccion-galeria {
+        padding: 10px;
+        margin-bottom: 40px;
+    }
+
+    .galeria-contenedor {
+        display: block;
+        border: 5px var(--Rojo) solid;
+        margin-bottom: 10px;
+    }
+
+    .galeria-foto1, 
+    .galeria-foto6 {
+        height: 150px;
+    }
+
+    .galeria-foto2,
+    .galeria-foto3,
+    .galeria-foto4,
+    .galeria-foto5 {
+        height: 150px;
+    }
+
+    .contacto-contenedor {
+        flex-direction: column;
+    }
+
+    .contacto-info {
+        flex-direction: row;
+        clip-path: none;
+    }
+
+    .contacto-form input,
+    .contacto-form textarea {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .contacto-form button {
+        width: 40%;
+    }
+
+    .texto-email input {
+        margin-top: 10px
+    }
+
+}

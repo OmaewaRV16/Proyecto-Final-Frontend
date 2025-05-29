@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/movil.css">
+    <link rel="stylesheet" href="css/carrousel.css">
+    <link rel="stylesheet" href="css/fancybox.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/responsiveslides.js"></script>
+    <script src="js/fancybox.js"></script>
+    <script src="js/wow.min.js"></script>
+
+
+    <title>Document</title>
+</head>
+<body>
+    <a href="#inicio"><i class="flecha fa-solid fa-angle-up"></i></a>
+    <header id="inicio">
+        <div class="header-contenedor ancho">
+            <div class="header-iconos">
+                <i class="fas fa-phone"></i>
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="header-boton">
+                <a href="#mapa"><button>Ubicación</button></a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-contenedor ancho">
+            <figure class="logo">
+                <img src="imagenes/xtepen-logo-750.gif" alt="Logo Xtepén">
+            </figure>
+            
+            <i class="fas fa-bars" id="menu-toggle"></i>
+
+            <div class="nav-links">
+                <i class="fas fa-times close-menu" id="close-menu"></i>
+                <a href="#inicio" class="btn-ancla">Inicio</a>
+                <a href="#elegir" class="btn-ancla">¿Por qué elegirnos?</a>
+                <a href="#servicios" class="btn-ancla">Servicios</a>
+                <a href="#eventos" class="btn-ancla">Eventos</a>
+                <a href="#galeria" class="btn-ancla">Galería</a>
+                <a href="#blog" class="btn-ancla">Blog</a>
+                <a href="#contacto" class="btn-ancla">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+
+        document.getElementById('close-menu').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.remove('active');
+        });
+
+        document.querySelectorAll('.btn-ancla').forEach(link => {
+            link.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+
+    </script>
+    
+    <section class="contenedor-slide">
+        <ul class="rslides">
+            <li><img src="imagenes/slide1.jpg" alt=""></li>
+            <li><img src="imagenes/slide2.jpeg" alt=""></li>
+            <li><img src="imagenes/slide3.jpeg" alt=""></li>
+            <li><img src="imagenes/slide4.jpg" alt=""></li>
+        </ul>
+        <div class="filtro">
+            <figure>
+                <img class="wow animate__animated animate__fadeInLeft animate__slow" src="imagenes/xtepen-logo-500-shadow.png" alt="">
+            </figure>
+            <div class="filtro-texto wow animate__animated animate__fadeInRight animate__slow">
+                <div class="video-thumbnail" id="abrirModalVideo">
+                    <img class="wow animate_animated" src="imagenes/imagen-modal.jpeg" alt="">
+                    <span class="play-icon">&#9658;</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalVideo" class="modal">
+            <span class="cerrar">&times;</span>
+                <div class="modal-contenido">
+                    <video id="videoPlayer" controls autoplay>
+                    <source src="videos/video-xtepen-bg-loop.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                    </video>
+                </div>
+        </div>
+
+    </section>
+
+    <script>
+        $(".rslides").responsiveSlides({
+            timeout: 5000,
+            nav: true,
+            prevText: "<i class='fa fa-chevron-left fa-2x'></i>",
+            nextText: "<i class='fa fa-chevron-right fa-2x'></i>"
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const abrirModal = document.getElementById("abrirModalVideo");
+        const modal = document.getElementById("modalVideo");
+        const cerrar = modal.querySelector(".cerrar");
+        const video = document.getElementById("videoPlayer");
+
+        abrirModal.addEventListener("click", () => {
+            modal.style.display = "flex";
+            video.currentTime = 0;
+            video.play();
+        });
+
+        cerrar.addEventListener("click", () => {
+            modal.style.display = "none";
+            video.pause();
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                video.pause();
+            }
+        });
+    });
+    </script>
+
+    <hr>
+
+    <section class="contenedor-elegirnos ancho wow animate__animated animate__zoomInUp animate__slow" id="elegir">
+        <h2>¿Por qué elegirnos?</h2>
+        <p>Porque entendemos que cada celebración es única. En nuestra hacienda no solo encuentras un lugar, encuentras un equipo que escucha, que cuida los detalles y que se compromete contigo desde el primer momento. Aquí no solo se hacen eventos, se viven experiencias llenas de emoción, belleza y tranquilidad. Queremos que disfrutes, que sonrías y que recuerdes ese día como uno de los mejores de tu vida.</p>
+    </section>
+
+    <section class="foto-parallaxs">
+        <div class="info-parallaxs">
+            <div class="texto-parallaxs wow animate__animated animate__zoomInDown animate__slow">
+                <h2>Tus sueños <br> destinados a <br> cumplirse.</h2>
+                <br>
+                <h3><span><i class="fa-solid fa-mortar-pestle"></i></span> Disfrutando y Comiendo.</h3>
+                <h3><span><i class="fa-solid fa-heart"></i></span> En una Relación.</h3>
+            </div>
+            <img class="wow animate__animated animate__fadeInDown animate__slow" src="imagenes/foto-info-parallaxs.jpeg" alt="">
+        </div>
+    </section>
+    
+    <section class="servicios" id="servicios">
+        <h2>Servicios</h2>
+            <div class="contenedor-elegirnos-items ancho">
+            <div class="elegirnos-item">
+                <div class="acordeon-titulo wow animate__animated animate__fadeInRight animate__slow">
+                    <h3>Equipo Profesional</h3>
+                    <i class="fas fa-users fa-2x"> <i class="fa-solid fa-arrow-down"></i></i>
+                </div>
+                <article class="acordeon-contenido">
+                    <div class="contenido-talcual">
+                        <p>Contamos con un equipo de profesionales dedicados a hacer de tu evento una experiencia inolvidable.</p>
+                        <img src="imagenes/foto-acordeon1.jpg" alt="">
+                    </div>
+                </article>
+            </div>
+            <div class="elegirnos-item">
+                <div class="acordeon-titulo wow animate__animated animate__fadeInLeft animate__slow">
+                    <h3>Gastronomía Exquisita</h3>
+                    <i class="fas fa-utensils fa-2x"> <i class="fa-solid fa-arrow-down"></i></i>
+                </div>
+                <article class="acordeon-contenido">
+                    <div class="contenido-talcual">
+                        <p>Nuestra oferta gastronómica es variada y deliciosa, adaptada a tus gustos y necesidades.</p>
+                        <img src="imagenes/foto-acordeon2.jpeg" alt="">
+                    </div>
+                </article>
+            </div>
+            <div class="elegirnos-item">
+                <div class="acordeon-titulo wow animate__animated animate__fadeInRight animate__slow">
+                    <h3>Fotografía Profesional</h3>
+                    <i class="fas fa-camera fa-2x"> <i class="fa-solid fa-arrow-down"></i></i>
+                </div>
+                <article class="acordeon-contenido">
+                    <div class="contenido-talcual">
+                        <p>Capturamos los momentos más especiales de tu evento con un toque artístico y profesional.</p>
+                        <img src="imagenes/foto-acordeon3.jpg" alt="">
+                    </div>
+                </article>
+            </div>
+            <div class="elegirnos-item">
+                <div class="acordeon-titulo wow animate__animated animate__fadeInLeft animate__slower">
+                    <h3>Decoración Personalizada</h3>
+                    <i class="fas fa-palette fa-2x"> <i class="fa-solid fa-arrow-down"></i></i>
+                </div>
+                <article class="acordeon-contenido">
+                    <div class="contenido-talcual">
+                        <p>Ofrecemos servicios de decoración adaptados a tus preferencias y estilo.</p>
+                        <img src="imagenes/foto-acordeon4.jpg" alt="">
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <script>
+        $('.acordeon-titulo').click(function() {
+            var t = $(this);
+            var tp = t.next();
+            $('.acordeon-contenido').not(tp).slideUp();
+            tp.slideToggle();
+        });
+        </script>
+
+    </section>
+    
+
+    <section class="eventos" id="eventos">
+        <h2>Eventos Destacados</h2>
+        <div id="carousel" class="wow animate__animated animate__fadeInLeft animate__slow">
+            <div id="slide-container">
+                <article class="slide" data-slideindex="0">
+                    <figure><img src="imagenes/imagen-carousel1.jpeg" alt=""></figure>
+                    <h3>Celebración de XV años</h3>
+                    <p>Un evento inolvidable lleno de alegría, tradición y momentos especiales para compartir con familiares y amigos.</p>
+                </article>
+                <article class="slide" data-slideindex="1">
+                    <figure><img src="imagenes/imagen-carousel2.jpeg" alt=""></figure>
+                    <h3>Celebración de Boda</h3>
+                    <p>Un día mágico lleno de amor, alegría, unión, compromiso, felicidad, familia, amigos, música, baile y recuerdos.</p>
+                </article>
+                <article class="slide" data-slideindex="2">
+                    <figure><img src="imagenes/imagen-carousel3.jpeg" alt=""></figure>
+                    <h3>Celebración de Banquete</h3>
+                    <p>Un banquete exquisito para deleitar a tus invitados con una experiencia gastronómica inolvidable, alegre e imperdible.</p>
+                </article>
+                <article class="slide" data-slideindex="3">
+                    <figure><img src="imagenes/imagen-carousel4.jpeg" alt=""></figure>
+                    <h3>Celebración de Fin de Curso</h3>
+                    <p>Un evento lleno de alegría y nostalgia para celebrar los logros académicos obtenidos de los estudiantes, se reconocen sus esfuerzos.</p>
+                </article>
+                <article class="slide" data-slideindex="4">
+                    <figure><img src="imagenes/imagen-carousel5.jpeg" alt=""></figure>
+                    <h3>Celebración de Bautizo</h3>
+                    <p>Un evento lleno de amor y alegría para dar la bienvenida a un nuevo miembro de la familia, donde se celebran las primeras bendiciones.</p>
+                </article>
+                <article class="slide" data-slideindex="5">
+                    <figure><img src="imagenes/imagen-carousel6.jpg" alt=""></figure>
+                    <h3>Celebración de Aniversario</h3>
+                    <p>Un evento especial para conmemorar el amor y la unión de una pareja a lo largo de los años y sus momentos más significativos.</p>
+                </article>
+            </div>
+        </div>
+        
+        <div class="slide-buttons">
+            <a href="#" id="back-button" class="arrow back">
+                <i class="fa-solid fa-hand-point-left"></i>
+            </a>
+            <a href="#" id="forward-button" class="arrow forward">
+                <i class="fa-solid fa-hand-point-right"></i>
+            </a>
+        </div>
+    </section>
+    <script src="js/carrousel.js"></script>
+
+
+    <section class="seccion-galeria" id="galeria">
+        <h2>Galería</h2>
+        <div class="galeria-contenedor ancho">
+            <a class="galeria-foto1 wow animate__animated animate__bounceInLeft animate__slow" href="imagenes/foto1.jpg" data-fancybox="gallery" data-caption="FOTOGRAFIA 1">
+            <figure class="galeria-foto1">
+                <img src="imagenes/foto1.jpg" alt="">
+            </figure>
+            </a>
+            <a class="galeria-foto2 wow animate__animated animate__bounceInDown animate__slow" href="imagenes/foto2.jpg" data-fancybox="gallery" data-caption="FOTOGRAFIA 2">
+                <figure class="galeria-foto2">
+                    <img src="imagenes/foto2.jpg" alt="">
+                </figure>
+            </a>
+            <a class="galeria-foto3 wow animate__animated animate__bounceInRight animate__slow" href="imagenes/foto3.jpg" data-fancybox="gallery" data-caption="FOTOGRAFIA 3">
+                <figure class="galeria-foto3">
+                    <img src="imagenes/foto3.jpg" alt="">
+                </figure>
+            </a>
+            <a class="galeria-foto4 wow animate__animated animate__bounceInLeft animate__slow" href="imagenes/foto4.jpg" data-fancybox="gallery" data-caption="FOTOGRAFIA 4">
+                <figure class="galeria-foto4">
+                    <img src="imagenes/foto4.jpg" alt="">
+                </figure>
+            </a>
+            <a class="galeria-foto5 wow animate__animated animate__bounceInUp animate__slow" href="imagenes/foto5.jpg" data-fancybox="gallery" data-caption="FOTOGRAFIA 5">
+                <figure class="galeria-foto5">
+                    <img src="imagenes/foto5.jpg" alt="">
+                </figure>
+            </a>
+            <a class="galeria-foto6 wow animate__animated animate__bounceInRight animate__slow" href="imagenes/foto6.jpg" data-fancybox="gallery" data-caption="FOTOGRAFIA 6">
+                <figure class="galeria-foto6">
+                    <img src="imagenes/foto6.jpg" alt="">
+                </figure>
+            </a>
+        </div>
+        <script>
+                    Fancybox.bind('[data-fancybox="gallery"]', {
+
+        });
+        </script>
+    </section>
+
+    <section class="blog" id="blog"> 
+        <h2>Nuestro Blog</h2>
+        <div class="blog-contenedor ancho">
+            <article class="wow animate__animated animate__zoomInUp animate__slow">
+                <figure>
+                    <img src="imagenes/blog1.jpg" alt="">
+                </figure>
+                <h3>Cómo planificar el evento perfecto</h3>
+                <p>Descubre los mejores consejos para organizar un evento inolvidable, desde la elección del lugar hasta la decoración y la gastronomía.</p>
+                <a href="#">Leer más</a>
+            </article>
+            <article class="wow animate__animated animate__zoomInUp animate__slow">
+                <figure>
+                    <img src="imagenes/blog2.jpg" alt="">
+                </figure>
+                <h3>Las tendencias en decoración de eventos</h3>
+                <p>Conoce las últimas tendencias en decoración para eventos y cómo puedes aplicarlas para hacer tu celebración única y especial.</p>
+                <a href="#">Leer más</a>
+            </article>
+            <article class="wow animate__animated animate__zoomInUp animate__slow">
+                <figure>
+                    <img src="imagenes/blog3.jpg" alt="">
+                </figure>
+                <h3>Gastronomía para eventos: opciones deliciosas</h3>
+                <p>Explora las diferentes opciones gastronómicas que puedes ofrecer en tus eventos, desde aperitivos hasta platos principales y postres.</p>
+                <a href="#">Leer más</a>
+            </article>
+            <article class="wow animate__animated animate__zoomInUp animate__slow">
+                <figure>
+                    <img src="imagenes/blog4.jpg" alt="">
+                </figure>
+                <h3>Fotografía de eventos: capturando momentos especiales</h3>
+                <p>La importancia de contar con un fotógrafo profesional para inmortalizar los momentos más importantes de tu evento.</p>
+                <a href="#">Leer más</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <h2>Contacto</h2>
+        <div class="contacto-contenedor ancho">
+            <div class="contacto-form wow animate__animated animate__rollIn animate__slow">
+                <form id="formulario">
+                    <div class="texto-email">
+                        <input type="text" id="nombre" name="nombre" required placeholder="Nombre Completo:">
+                        <input type="email" id="correo" name="correo" required placeholder="Correo Electronico:">
+                    </div>
+
+                    <div class="telefono-wrapper">
+                        <span class="codigo-pais">+52</span>
+                        <input type="tel" id="numero" name="numero" required placeholder="Número de Celular:">
+                    </div>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Mensaje (opcional):"></textarea>
+
+                    <br>
+                    <button type="submit">Enviar</button>
+                </form>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+                const nombre = document.getElementById('nombre').value.trim();
+                const correo = document.getElementById('correo').value.trim();
+                const numero = document.getElementById('numero').value.trim();
+                const mensaje = document.getElementById('mensaje').value.trim();
+
+                if (nombre.length < 3) {
+                    alert('Por favor, ingresa un nombre válido de al menos 3 caracteres.');
+                    return;
+                }
+
+                const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!correoRegex.test(correo)) {
+                    alert('Por favor, ingresa un correo electrónico válido.');
+                    return;
+                }
+
+                const numeroRegex = /^\d{10}$/;
+                if (!numeroRegex.test(numero)) {
+                    alert('Por favor, ingresa un número de celular válido de 10 dígitos (sin el código +52).');
+                    return;
+                }
+
+                if (mensaje.length > 0 && mensaje.length < 10) {
+                    alert('Si escribes un mensaje, debe tener al menos 10 caracteres.');
+                    return;
+                }
+
+        this.submit();
+        });
+    </script>
+
+
+            </div>
+
+            <div class="contacto-info wow animate__animated animate__rollIn animate__slow">
+                <div class="info">
+                    <h3>Información de contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Hacienda Xtepén, Mérida, Yucatán</p>
+                    <p><i class="fas fa-phone"></i> +52 999 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> contacto@xtepen.com</p>
+                    <p>Síguenos en redes sociales:</p>
+                    <p>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mapa" id="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.2283876018323!2d-89.74585092511678!3d20.822481980775688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f56139b7a4ffdb1%3A0x319d43331f2b501b!2sHacienda%20Xtep%C3%A9n!5e0!3m2!1ses-419!2smx!4v1748467462707!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+    <section class="tarjetas">
+        <div class="contenedor-tarjetas ancho">
+
+        <article class="imghvr-slide-up wow animate__animated animate__slideInLeft animate__slow">
+        <img src="imagenes/foto-card1.jpeg" alt="Tarjeta 1">
+        <figcaption>
+            <h3>Evento Especial</h3>
+            <p>Disfruta de una experiencia única.</p>
+        </figcaption>
+        </article>
+
+        <article class="imghvr-slide-up wow animate__animated animate__slideInRight animate__fast">
+        <img src="imagenes/foto-card2.jpg" alt="Tarjeta 2">
+        <figcaption>
+            <h3>Promociones Limitadas</h3>
+            <p>Solo por tiempo limitado.</p>
+        </figcaption>
+        </article>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-contenedor">
+            <div class="footer-acerca-de">
+            <h3>Hacienda Xtepen</h3>
+            <p>Un lugar mágico donde la tradición y la naturaleza se unen para brindarte experiencias inolvidables.</p>
+            </div>
+            <img src="imagenes/xtepen-logo-500-shadow.png" alt="">
+        </div>
+        <p class="footer-derechos">&copy; 2025 Hacienda Xtepén. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+<script>
+  new WOW().init();
+</script>
+</html>
